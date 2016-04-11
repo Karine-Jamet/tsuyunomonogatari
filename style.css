@@ -1,0 +1,96 @@
+html, body {
+  margin: 0;
+  min-height: 100vh;
+  text-align: center;
+  overflow: hidden;
+}
+html{
+  background-color: #def;
+  background-image: radial-gradient(closest-side, transparent 98%, rgba(0, 0, 0, .2) 99%), radial-gradient(closest-side, transparent 98%, rgba(0, 0, 0, .2) 99%);
+  background-size: 80px 80px;
+  background-position: 0 0, 40px 40px;
+}
+
+.kakemono{
+  height: 100vh;
+  overflow: hidden;
+  width: 80vw;
+  text-align: center;
+  margin: auto;
+  background-color: white;
+  box-shadow: 1px 2px 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+  font-size: 40px;
+  vertical-align: middle;
+  margin: auto;
+  position: relative;
+  top: -113px;
+}
+h2 {
+  font-size: 40px;
+  margin: auto;
+}
+.fadeEffectTitle {
+  text-align: center;
+  margin: auto;
+  position: relative;
+  top: 60px;
+  left: -42px;
+  width: 500px;
+  height: 65px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 26%, rgba(255, 255, 255, 1) 31%, rgba(255, 255, 255, 1) 42%);
+  /*border: 2px solid black;*/
+  transition: 1.5s left ease-in 0.8s;
+}
+
+/*______________________________*/
+
+.fadeEffectTitleJapRight {
+  text-align: center;
+  margin: auto;
+  position: relative;
+  top: 114px;
+  left: -350px;
+  width: 500px;
+  height: 65px;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 26%, rgba(255, 255, 255, 1) 31%, rgba(255, 255, 255, 1) 42%);
+  /*border: 2px solid black;*/
+  transition: 1.5s left ease-out 3s;
+}
+.fadeEffectTitleActionJapRight {
+  left: 0px;
+}
+.fadeEffectTitleJapLeft {
+  text-align: center;
+  margin: auto;
+  position: relative;
+  top: -62px;
+  left: -70px;
+  width: 500px;
+  height: 65px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 26%, rgba(255, 255, 255, 1) 31%, rgba(255, 255, 255, 1) 42%);
+  /*border: 2px solid black;*/
+  transition: 1.5s left ease-in;
+  z-index: 10;
+}
+.fadeEffectTitleAction {
+  left: 390px;
+}
+.fa {
+  font-size: 70px;
+  opacity: 0;
+}
+.startShow {
+  opacity: 1;
+  transition: 1.5s opacity 1s;
+}
+.startShow:hover {
+  cursor: pointer;
+}
+
+.hide{
+  opacity:0;
+  transition : 1s opacity ease-out;
+}
