@@ -2,6 +2,7 @@ $(document).ready(function() {
 
   $("h1").hide();
   $(".fadeEffectTitleJapLeft").hide();
+  //$(".gameIni").hide();
 
   $(".fadeEffectTitle").addClass("fadeEffectTitleAction");
   $(".fadeEffectTitleJapRight").addClass("fadeEffectTitleActionJapRight");
@@ -14,11 +15,22 @@ $(document).ready(function() {
   window.setTimeout(function(e) {
     $(".fadeEffectTitleJapLeft").addClass("fadeEffectTitleAction");
     $(".fa").addClass("startShow");
-  }, 5000)
+  }, 4800)
 
 
   $('.start').on("click", function(e) {
+  //  $(".gameIni").show();
     $('.intro').addClass("hide");
+    window.setTimeout(function(e) {
+      $('.intro').hide();
+
+    }, 1000);
+
+    window.setTimeout(function(e) {
+      $('.hideFirstStrophe').add();
+
+    }, 1000);
+
   });
 
   function hasGetUserMedia() {

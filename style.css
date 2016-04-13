@@ -20,6 +20,17 @@ html{
   background-color: white;
   box-shadow: 1px 2px 10px 10px rgba(0, 0, 0, 0.4);
 }
+.intro{
+  opacity:1;
+  background-color: white;
+  height: 100vh;
+  z-index: 100;
+  width: 80vw;
+  position: absolute;
+  top:0;
+  left: 10vw;
+  overflow: hidden;
+}
 
 h1 {
   font-size: 40px;
@@ -93,4 +104,81 @@ h2 {
 .hide{
   opacity:0;
   transition : 1s opacity ease-out;
+}
+
+
+
+/*------------ Game Ini ------------------*/
+
+.gameIni{
+  position: absolute;
+  top: 0;
+  left:10vw;
+  width: 80vw;
+  z-index: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.grue1{
+  background-image: url("images/grue01.png");
+  width: 30vw;
+  height: 35vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position:absolute;
+  bottom: 10px;
+  right: 50px;
+
+}
+
+.verticalTexte{
+  width:1px;
+  word-wrap: break-word;
+  font-family: monospace;
+  float: left;
+  margin: 50px;
+}
+
+span {
+  color:white;
+}
+
+.sceau{
+  width: 50px;
+  height: 50px;
+  background-image: url('images/sceaux.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  float: left;
+  margin-top: 325px;
+  margin-left: -40px;
+}
+
+.whiteStrophe {
+  width: 50px;
+  height: 100vw;
+  background-color: white;
+  position:absolute;
+  top:-10px;
+  background: linear-gradient( rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 6%, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 1) 26%);
+  /*border: 2px solid black;*/
+  transition: 1.5s top ease-in;
+}
+
+.hideFirstStrophe{
+  left:30px;
+}
+
+.hideSecondStrophe{
+  left:118px;
+}
+
+.hideThirdStrophe{
+  left:250px;
+  width: 100px;
+}
+
+.showHaiku{
+  top:100vh;
 }
