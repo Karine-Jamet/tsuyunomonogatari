@@ -117,6 +117,7 @@ h2 {
   width: 80vw;
   z-index: 0;
   height: 100vh;
+  overflow: hidden;
 }
 
 .grue1{
@@ -152,4 +153,32 @@ span {
   float: left;
   margin-top: 325px;
   margin-left: -40px;
+}
+
+.whiteStrophe {
+  width: 50px;
+  height: 100vw;
+  background-color: white;
+  position:absolute;
+  top:-10px;
+  background: linear-gradient( rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 6%, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 1) 26%);
+  /*border: 2px solid black;*/
+  transition: 1.5s top ease-in;
+}
+
+.hideFirstStrophe{
+  left:30px;
+}
+
+.hideSecondStrophe{
+  left:118px;
+}
+
+.hideThirdStrophe{
+  left:250px;
+  width: 100px;
+}
+
+.showHaiku{
+  top:100vh;
 }

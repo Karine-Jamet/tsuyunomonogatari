@@ -26,6 +26,11 @@ $(document).ready(function() {
 
     }, 1000);
 
+    window.setTimeout(function(e) {
+      $('.hideFirstStrophe').add();
+
+    }, 1000);
+
   });
 
 });
