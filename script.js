@@ -1,5 +1,25 @@
 $(document).ready(function() {
 
+
+  // navigator.getUserMedia = navigator.getUserMedia ;
+
+  var constraints = {video: true, audio: true};
+
+  function successCallback(localMediaStream) {
+    window.stream = localMediaStream; // stream available to console
+    var video = document.querySelector("video");
+    video.src = window.URL.createObjectURL(localMediaStream);
+    video.play();
+  }
+
+  function errorCallback(error){
+    console.log("navigator.getUserMedia error: ", error);
+  }
+  
+  navigator.webkitGetUserMedia(constraints, successCallback, errorCallback);
+
+
+
   $("h1").hide();
   $(".fadeEffectTitleJapLeft").hide();
   //$(".gameIni").hide();
@@ -27,9 +47,17 @@ $(document).ready(function() {
     }, 1000);
 
     window.setTimeout(function(e) {
-      $('.hideFirstStrophe').add();
+      $('.hideFirstStrophe').addClass("showHaiku");
 
     }, 1000);
+    window.setTimeout(function(e) {
+      $('.hideSecondStrophe').addClass("showHaiku");
+
+    }, 2000);
+    window.setTimeout(function(e) {
+      $('.hideThirdStrophe').addClass("showHaiku");
+
+    }, 3000);
 
   });
 
