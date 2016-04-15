@@ -54,6 +54,10 @@ $(document).ready(function() {
       $('.grue5').addClass('grueShow');
 
     }, 7000);
+    window.setTimeout(function(e) {
+      $('.grue5').addClass('grueDown');
+
+    }, 7000);
 
 
     //gest.options.debug(true);
@@ -89,17 +93,32 @@ $(document).ready(function() {
 
 
 
-      var ms = new motionSensor();
+  var ms = new motionSensor();
 
-      document.addEventListener('motion', function(e) {
-        // document.getElementById('output').innerHTML = e.detail.dir;
-        if (e.detail.dir == 'left') {
-          console.log('left');
-        }
-        if (e.detail.dir == 'right') {
-          console.log('right');
-        }
-      });
+  document.addEventListener('motion', function(e) {
+    // document.getElementById('output').innerHTML = e.detail.dir;
+    if (e.detail.dir == 'left') {
+      if($(".grue5").hasClass('directionRight')){
+        $('.grue5').removeClass('directionRight');
+        $('.grue5').addClass('directionLeft');
+      }else if($(".grue5").hasClass('directionLeft')){
+      }else {
+        $('.grue5').addClass('directionLeft');
+      }
+
+
+
+    }
+    if (e.detail.dir == 'right') {
+      if($(".grue5").hasClass('directionRight')){
+      }else if($(".grue5").hasClass('directionLeft')){
+        $('.grue5').removeClass('directionLeft');
+        $('.grue5').addClass('directionRight');
+      }else {
+        $('.grue5').addClass('directionRight');
+      }
+    }
+  });
 
 
 

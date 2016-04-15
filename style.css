@@ -171,14 +171,15 @@ h2 {
 .grue5{
   opacity: 0;
   /*background-image: url("images/grue04.png");*/
-  width: 31vw;
-  height: 35vw;
-  background-repeat: no-repeat;
-  background-size: cover;
+  width: 30vw;
+  height: 10vh;
+  /*background-repeat: no-repeat;*/
+  /*background-size: cover;*/
   position:absolute;
-  bottom: 30%;
-  right: 15%;
-  transition:2s opacity ease-out;
+  background-color: pink;
+  bottom: 80%;
+  right: 35%;
+  transition:2s opacity ease-out, 1s right ease-out;
 
 }
 .grueShow{
@@ -187,6 +188,24 @@ h2 {
 
 .grueHide{
   opacity: 0;
+}
+
+.grueDown{
+  bottom: 20px;
+  width: 200px;
+  height: 50px;
+  transition: 3s bottom ease-in, 3s width ease-in, 3s height ease-in;
+}
+
+.directionLeft{
+  right: 50vw;
+  transition: 0.5s right ease-in;
+}
+
+.directionRight{
+  right: 10vw;
+  transition: 0.5s right ease-in;
+
 }
 
 .verticalTexte{
