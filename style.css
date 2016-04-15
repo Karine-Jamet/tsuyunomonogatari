@@ -183,8 +183,10 @@ span {
   top:100vh;
 }
 
-.video {
+video {
   position: absolute;
   top:0;
   left:10px;
+  height: 100px;
+  width: auto;
 }
