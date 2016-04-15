@@ -15,7 +15,7 @@ $(document).ready(function() {
   function errorCallback(error){
     console.log("navigator.getUserMedia error: ", error);
   }
-  
+
   navigator.webkitGetUserMedia(constraints, successCallback, errorCallback);
 
 
@@ -57,8 +57,40 @@ $(document).ready(function() {
     window.setTimeout(function(e) {
       $('.hideThirdStrophe').addClass("showHaiku");
 
+
     }, 3000);
 
   });
+
+
+  //gest.options.debug(true);
+  var messageContainer = document.createElement('div');
+  messageContainer.className = 'gest-message';
+  document.body.appendChild(messageContainer);
+
+  var styles = {
+    positioning: 'position:absolute; top:0; left:200px; margin: 22% auto; min-width: 100px; max-width: 400px; width: 80%; padding: 15px;',
+    copy: 'font: normal 35px/1.1 \"Helvetica Neue\", Helvetica, Arial, sans-serif; color: #fff; font-size: 45px; text-align: center;',
+    general: 'display: block; background-color: #000; z-index: 100; border-radius: 10px;'
+  },
+    messageContainerStyle = styles.positioning + styles.copy + styles.general;
+
+    gest.options.subscribeWithCallback(function(gesture) {
+    				var message = '';
+    				if (gesture.direction) {
+    					message = gesture.direction;
+    				} else {
+    					message = gesture.error.message;
+    				} 
+
+    messageContainer.innerHTML = '<p style=\"margin:0\">' + message + '</p>';
+    messageContainer.setAttribute('style', messageContainerStyle);
+
+    window.setTimeout(function() {
+      messageContainer.setAttribute('style', 'display: none;');
+    }, 3000);
+  });
+
+  gest.start();
 
 });
