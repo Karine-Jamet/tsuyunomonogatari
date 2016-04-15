@@ -1,24 +1,6 @@
 $(document).ready(function() {
 
 
-  // navigator.getUserMedia = navigator.getUserMedia ;
-
-  var constraints = {video: true, audio: true};
-
-  function successCallback(localMediaStream) {
-    window.stream = localMediaStream; // stream available to console
-    var video = document.querySelector("video");
-    video.src = window.URL.createObjectURL(localMediaStream);
-    video.play();
-  }
-
-  function errorCallback(error){
-    console.log("navigator.getUserMedia error: ", error);
-  }
-
-  navigator.webkitGetUserMedia(constraints, successCallback, errorCallback);
-
-
 
   $("h1").hide();
   $(".fadeEffectTitleJapLeft").hide();
@@ -39,7 +21,7 @@ $(document).ready(function() {
 
 
   $('.start').on("click", function(e) {
-  //  $(".gameIni").show();
+    //  $(".gameIni").show();
     $('.intro').addClass("hide");
     window.setTimeout(function(e) {
       $('.intro').hide();
@@ -48,49 +30,80 @@ $(document).ready(function() {
 
     window.setTimeout(function(e) {
       $('.hideFirstStrophe').addClass("showHaiku");
+      $('.grue1').addClass('grueHide');
+      $('.grue2').addClass('grueShow');
 
     }, 1000);
     window.setTimeout(function(e) {
       $('.hideSecondStrophe').addClass("showHaiku");
+      $('.grue2').addClass('grueHide');
+      $('.grue3').addClass('grueShow');
 
-    }, 2000);
+    }, 3000);
     window.setTimeout(function(e) {
       $('.hideThirdStrophe').addClass("showHaiku");
+      $('.grue3').addClass('grueHide');
+      $('.grue4').addClass('grueShow');
+
+    }, 5000);
 
 
-    }, 3000);
+    window.setTimeout(function(e) {
+      $('.haiku').addClass("hide");
+      $('.grue4').addClass('grueHide');
+      $('.grue5').addClass('grueShow');
+
+    }, 7000);
+
+
+    //gest.options.debug(true);
+
+
+    navigator.getUserMedia = navigator.getUserMedia;
+
+    var constraints = {
+      video: true,
+      audio: true
+    };
+
+    function successCallback(localMediaStream) {
+      window.stream = localMediaStream; // stream available to console
+      var video = document.querySelector("video");
+      video.src = window.URL.createObjectURL(localMediaStream);
+      video.play();
+    }
+
+    function errorCallback(error) {
+      console.log("navigator.getUserMedia error: ", error);
+    }
+
+    navigator.webkitGetUserMedia(constraints, successCallback, errorCallback);
+
+
+    /****/
+
+
+
 
   });
 
 
-  //gest.options.debug(true);
-  var messageContainer = document.createElement('div');
-  messageContainer.className = 'gest-message';
-  document.body.appendChild(messageContainer);
 
-  var styles = {
-    positioning: 'position:absolute; top:0; left:200px; margin: 22% auto; min-width: 100px; max-width: 400px; width: 80%; padding: 15px;',
-    copy: 'font: normal 35px/1.1 \"Helvetica Neue\", Helvetica, Arial, sans-serif; color: #fff; font-size: 45px; text-align: center;',
-    general: 'display: block; background-color: #000; z-index: 100; border-radius: 10px;'
-  },
-    messageContainerStyle = styles.positioning + styles.copy + styles.general;
+      var ms = new motionSensor();
 
-    gest.options.subscribeWithCallback(function(gesture) {
-    				var message = '';
-    				if (gesture.direction) {
-    					message = gesture.direction;
-    				} else {
-    					message = gesture.error.message;
-    				} 
+      document.addEventListener('motion', function(e) {
+        // document.getElementById('output').innerHTML = e.detail.dir;
+        if (e.detail.dir == 'left') {
+          console.log('left');
+        }
+        if (e.detail.dir == 'right') {
+          console.log('right');
+        }
+      });
 
-    messageContainer.innerHTML = '<p style=\"margin:0\">' + message + '</p>';
-    messageContainer.setAttribute('style', messageContainerStyle);
 
-    window.setTimeout(function() {
-      messageContainer.setAttribute('style', 'display: none;');
-    }, 3000);
-  });
 
-  gest.start();
+
+
 
 });

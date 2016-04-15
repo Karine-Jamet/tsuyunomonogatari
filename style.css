@@ -101,10 +101,7 @@ h2 {
   cursor: pointer;
 }
 
-.hide{
-  opacity:0;
-  transition : 1s opacity ease-out;
-}
+
 
 
 
@@ -128,8 +125,68 @@ h2 {
   background-size: cover;
   position:absolute;
   bottom: 10px;
-  right: 50px;
+  right: 140px;
+  transition:2s opacity ease-out;
+  z-index: 1000;
 
+}
+
+.grue2{
+  opacity: 0;
+  background-image: url("images/grue02.png");
+  width: 30vw;
+  height: 35vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position:absolute;
+  bottom: 10px;
+  right: 140px;
+  transition:2s opacity ease-out;
+}
+.grue3{
+  opacity: 0;
+  background-image: url("images/grue03.png");
+  width: 54vw;
+  height: 35vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position:absolute;
+  bottom: 25px;
+  right: 30px;
+  transition:2s opacity ease-out;
+}
+.grue4{
+  opacity: 0;
+  background-image: url("images/grue04.png");
+  width: 31vw;
+  height: 35vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position:absolute;
+  bottom: 30%;
+  right: 15%;
+  transition:2s opacity ease-out;
+}
+
+.grue5{
+  opacity: 0;
+  /*background-image: url("images/grue04.png");*/
+  width: 31vw;
+  height: 35vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position:absolute;
+  bottom: 30%;
+  right: 15%;
+  transition:2s opacity ease-out;
+
+}
+.grueShow{
+  opacity: 1;
+}
+
+.grueHide{
+  opacity: 0;
 }
 
 .verticalTexte{
@@ -185,8 +242,18 @@ span {
 
 video {
   position: absolute;
-  top:0;
-  left:10px;
+  bottom:0;
+  right:0px;
   height: 100px;
   width: auto;
+}
+
+canvas {
+  display:none;
+}
+
+
+.hide{
+  opacity:0;
+  transition : 1s opacity ease-out;
 }
