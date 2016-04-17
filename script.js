@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+
+
   $("h1").hide();
   $(".fadeEffectTitleJapLeft").hide();
   //$(".gameIni").hide();
@@ -19,7 +21,7 @@ $(document).ready(function() {
 
 
   $('.start').on("click", function(e) {
-  //  $(".gameIni").show();
+    //  $(".gameIni").show();
     $('.intro').addClass("hide");
     window.setTimeout(function(e) {
       $('.intro').hide();
@@ -27,33 +29,97 @@ $(document).ready(function() {
     }, 1000);
 
     window.setTimeout(function(e) {
-      $('.hideFirstStrophe').add();
+      $('.hideFirstStrophe').addClass("showHaiku");
+      $('.grue1').addClass('grueHide');
+      $('.grue2').addClass('grueShow');
 
     }, 1000);
+    window.setTimeout(function(e) {
+      $('.hideSecondStrophe').addClass("showHaiku");
+      $('.grue2').addClass('grueHide');
+      $('.grue3').addClass('grueShow');
+
+    }, 3000);
+    window.setTimeout(function(e) {
+      $('.hideThirdStrophe').addClass("showHaiku");
+      $('.grue3').addClass('grueHide');
+      $('.grue4').addClass('grueShow');
+
+    }, 5000);
+
+
+    window.setTimeout(function(e) {
+      $('.haiku').addClass("hide");
+      $('.grue4').addClass('grueHide');
+      $('.grue5').addClass('grueShow');
+
+    }, 7000);
+    window.setTimeout(function(e) {
+      $('.grue5').addClass('grueDown');
+
+    }, 7000);
+
+
+    //gest.options.debug(true);
+
+
+    navigator.getUserMedia = navigator.getUserMedia;
+
+    var constraints = {
+      video: true,
+      audio: true
+    };
+
+    function successCallback(localMediaStream) {
+      window.stream = localMediaStream; // stream available to console
+      var video = document.querySelector("video");
+      video.src = window.URL.createObjectURL(localMediaStream);
+      video.play();
+    }
+
+    function errorCallback(error) {
+      console.log("navigator.getUserMedia error: ", error);
+    }
+
+    navigator.webkitGetUserMedia(constraints, successCallback, errorCallback);
+
+
+    /****/
+
+
+
 
   });
 
-  function hasGetUserMedia() {
-	return !!(navigator.getUserMedia || navigator.webkitGetUserMedia ||
-		navigator.mozGetUserMedia || navigator.msGetUserMedia);
-}
 
-var webcamError = function(e) {
-	alert('Webcam error!', e);
-};
 
-var video = $('#webcam')[0];
+  var ms = new motionSensor();
 
-if (navigator.getUserMedia) {
-	navigator.getUserMedia({audio: true, video: true}, function(stream) {
-		video.src = stream;
-	}, webcamError);
-} else if (navigator.webkitGetUserMedia) {
-         navigator.webkitGetUserMedia({audio:true, video:true}, function(stream) {
-		video.src = window.webkitURL.createObjectURL(stream);
-	}, webcamError);
-} else {
-	//video.src = 'video.webm'; // fallback.
-}
-  
+  document.addEventListener('motion', function(e) {
+    // document.getElementById('output').innerHTML = e.detail.dir;
+    if (e.detail.dir == 'left') {
+      if($(".grue5").hasClass('directionRight')){
+        $('.grue5').removeClass('directionRight');
+        $('.grue5').addClass('directionLeft');
+      }else if($(".grue5").hasClass('directionLeft')){
+      }else {
+        $('.grue5').addClass('directionLeft');
+      }
+
+
+
+    }
+    if (e.detail.dir == 'right') {
+      if($(".grue5").hasClass('directionRight')){
+      }else if($(".grue5").hasClass('directionLeft')){
+        $('.grue5').removeClass('directionLeft');
+        $('.grue5').addClass('directionRight');
+      }else {
+        $('.grue5').addClass('directionRight');
+      }
+    }
+  });
+
+
+
 });
