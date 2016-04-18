@@ -170,16 +170,17 @@ h2 {
 
 .grue5{
   opacity: 0;
-  /*background-image: url("images/grue04.png");*/
-  width: 30vw;
-  height: 10vh;
-  /*background-repeat: no-repeat;*/
-  /*background-size: cover;*/
+  background-image: url("images/grue05.png");
+  width: 500px;
+  height: 350px;
+  background-repeat: no-repeat;
+  background-size: cover;
   position:absolute;
-  background-color: pink;
-  bottom: 80%;
-  right: 35%;
+  /*background-color: pink;*/
+  bottom: 40%;
+  right: 20%;
   transition:2s opacity ease-out, 1s right ease-out;
+  z-index: 10000;
 
 }
 .grueShow{
@@ -193,8 +194,9 @@ h2 {
 .grueDown{
   bottom: 20px;
   width: 200px;
-  height: 50px;
-  transition: 3s bottom ease-in, 3s width ease-in, 3s height ease-in;
+  height: 142px;
+  right: 40%;
+  transition: 3s right ease-out, 2s opacity ease-out, 3s bottom ease-in, 3s width ease-in, 3s height ease-in;
 }
 
 .directionLeft{
@@ -271,6 +273,57 @@ canvas {
   display:none;
 }
 
+
+.water{
+  background-image: url("images/seigaiha.png");
+  background-repeat: repeat;
+  width: 100%;
+  height: 3000px;
+  opacity: 0;
+  position: relative;
+  top: -2000px;
+  transition: 25s top linear, 1s opacity ease-in;
+}
+
+.waterShow{
+  opacity: 1;
+}
+
+.waterMove{
+  top: 0;
+}
+
+.cloudLeft{
+  opacity:0;
+  background-image: url("images/nuage.png");
+  height: 100%;
+  background-repeat: repeat-y;
+  width: 200px;
+  position: absolute;
+  top:0;
+  left:0;
+  transform: scale(-1);
+
+}
+
+.cloudRight{
+  opacity:0;
+  background-image: url("images/nuage.png");
+  height: 100%;
+  background-repeat: repeat-y;
+  width: 200px;
+  position: absolute;
+  top:0;
+  right:0;
+
+  transition : 1s opacity ease-out;
+
+
+}
+
+.cloudShow{
+  opacity: 1;
+}
 
 .hide{
   opacity:0;

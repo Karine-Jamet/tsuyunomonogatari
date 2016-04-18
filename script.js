@@ -52,15 +52,20 @@ $(document).ready(function() {
       $('.haiku').addClass("hide");
       $('.grue4').addClass('grueHide');
       $('.grue5').addClass('grueShow');
+      $('.water').addClass('waterShow');
+      $('.cloudLeft').addClass('cloudShow');
+      $('.cloudRight').addClass('cloudShow');
 
     }, 7000);
+
     window.setTimeout(function(e) {
       $('.grue5').addClass('grueDown');
+      $('.water').addClass('waterMove ');
 
-    }, 7000);
+
+    }, 8000);
 
 
-    //gest.options.debug(true);
 
 
     navigator.getUserMedia = navigator.getUserMedia;
@@ -95,30 +100,29 @@ $(document).ready(function() {
 
   var ms = new motionSensor();
 
-  document.addEventListener('motion', function(e) {
-    // document.getElementById('output').innerHTML = e.detail.dir;
-    if (e.detail.dir == 'left') {
-      if($(".grue5").hasClass('directionRight')){
-        $('.grue5').removeClass('directionRight');
-        $('.grue5').addClass('directionLeft');
-      }else if($(".grue5").hasClass('directionLeft')){
-      }else {
-        $('.grue5').addClass('directionLeft');
+
+    document.addEventListener('motion', function(e) {
+      // document.getElementById('output').innerHTML = e.detail.dir;
+      if (e.detail.dir == 'left') {
+        if ($(".grue5").hasClass('directionRight')) {
+          $('.grue5').removeClass('directionRight');
+          $('.grue5').addClass('directionLeft');
+        } else if ($(".grue5").hasClass('directionLeft')) {} else {
+          $('.grue5').addClass('directionLeft');
+        }
+
+
+
       }
-
-
-
-    }
-    if (e.detail.dir == 'right') {
-      if($(".grue5").hasClass('directionRight')){
-      }else if($(".grue5").hasClass('directionLeft')){
-        $('.grue5').removeClass('directionLeft');
-        $('.grue5').addClass('directionRight');
-      }else {
-        $('.grue5').addClass('directionRight');
+      if (e.detail.dir == 'right') {
+        if ($(".grue5").hasClass('directionRight')) {} else if ($(".grue5").hasClass('directionLeft')) {
+          $('.grue5').removeClass('directionLeft');
+          $('.grue5').addClass('directionRight');
+        } else {
+          $('.grue5').addClass('directionRight');
+        }
       }
-    }
-  });
+    });
 
 
 
