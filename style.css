@@ -238,7 +238,7 @@ span {
   height: 100vw;
   background-color: white;
   position:absolute;
-  top:-10px;
+  top:-50px;
   background: linear-gradient( rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 6%, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 1) 26%);
   /*border: 2px solid black;*/
   transition: 1.5s top ease-in;
@@ -276,17 +276,25 @@ canvas {
 
 .water{
   background-image: url("images/seigaiha.png");
+  background-position: left bottom;
   background-repeat: repeat;
+  background-color: #6699cc;
   width: 100%;
-  height: 3000px;
+  height: 100%;
   opacity: 0;
   position: relative;
-  top: -2000px;
-  transition: 25s top linear, 1s opacity ease-in;
+  top: 0px;
+  transition: 1s opacity ease-in;
+  animation: waterMove 2s linear infinite;
 }
 
 .waterShow{
   opacity: 1;
+}
+
+@keyframes waterMove {
+    from { background-position: left 0px; }
+    to { background-position: left 62px; }
 }
 
 .waterMove{
@@ -303,27 +311,99 @@ canvas {
   top:0;
   left:0;
   transform: scale(-1);
+  animation : 1s cloudMoveL linear infinite;
 
 }
+
+
 
 .cloudRight{
   opacity:0;
   background-image: url("images/nuage.png");
   height: 100%;
+  background-position: left bottom;
   background-repeat: repeat-y;
   width: 200px;
   position: absolute;
   top:0;
   right:0;
-
+ animation : 1s cloudMoveR linear infinite;
   transition : 1s opacity ease-out;
 
 
 }
 
+@keyframes cloudMoveR {
+    from { background-position: left 0px; }
+    to { background-position: left 300px; }
+}
+
+@keyframes cloudMoveL {
+    from { background-position: left 300px; }
+    to { background-position: left 0px; }
+}
+
+
+.cloudFond {
+	width : 200px;
+	height: 150%;
+	position: absolute;
+	 opacity:0;
+	   transition : 1s opacity ease-out;
+
+	
+}
+
 .cloudShow{
   opacity: 1;
 }
+
+.cloudFond01{
+	top:-50%;
+	left:10%;
+	background-image : url("images/nuageFond01.png");
+	background-repeat:no-repeat;
+	background-position:0%;
+	animation : 25s cloudFondMove01 linear infinite 8s;
+	
+}
+
+
+@keyframes cloudFondMove01 {
+    from { background-position: left 0%; }
+    to { background-position: left 150%; }
+}
+
+.cloudFond02{
+	top:-50%;
+	left:40%;
+	background-image : url("images/nuageFond02.png");
+	background-repeat:no-repeat;
+	background-position:0%;
+	animation : 20s cloudFondMove02 linear infinite 18s;
+	
+}
+
+@keyframes cloudFondMove02 {
+    from { background-position: left 0%; }
+    to { background-position: left 150%; }
+}
+
+.cloudFond03{
+	top:-50%;
+	left:70%;
+	background-image : url("images/nuageFond03.png");
+	background-position:0%;
+	background-repeat:no-repeat;
+	animation : 23s cloudFondMove03 linear infinite 6s;
+	
+}
+
+@keyframes cloudFondMove03 {
+    from { background-position: left 0%; }
+    to { background-position: left 150%; }
+}
+
 
 .hide{
   opacity:0;

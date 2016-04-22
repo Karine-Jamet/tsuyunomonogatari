@@ -55,6 +55,7 @@ $(document).ready(function() {
       $('.water').addClass('waterShow');
       $('.cloudLeft').addClass('cloudShow');
       $('.cloudRight').addClass('cloudShow');
+	  $('.cloudFond').addClass('cloudShow');
 
     }, 7000);
 
