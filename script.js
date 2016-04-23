@@ -124,13 +124,15 @@ $(document).ready(function() {
 	
 	
 	$(".eagle").onPositionChanged(function(){
-		if($('.eagle').position().top > $(window).height()){
+		if($('.eagle').position().top > $(window).height()-142){
 			if($(".eagle").hasClass("eagleLeft") && $(".grue5").hasClass('directionLeft') ){
 				
 				lostScore(score);
+				$(".grue5").fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
 			}else if($(".eagle").hasClass("eagleRight") && $(".grue5").hasClass('directionRight') ){
 				
 				lostScore(score);
+				$(".grue5").fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
 			}
 			$(".eagle").removeClass("eagleLeft");
 			$(".eagle").removeClass("eagleRight");
@@ -140,16 +142,19 @@ $(document).ready(function() {
 	
 	
 		$(".bonus").onPositionChanged(function(){
-		if($('.bonus').position().top > $(window).height()){
+		if($('.bonus').position().top > $(window).height()-142){
 			if($(".bonus").hasClass("bonusLeft") && $(".grue5").hasClass('directionLeft') ){
 				
 				addScore(score);
+				$(".bonus").fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100);
 			}else if($(".bonus").hasClass("bonusRight") && $(".grue5").hasClass('directionRight') ){
 				
 				addScore(score);
+				$(".bonus").fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100);
 			}
 			$(".bonus").removeClass("bonusLeft");
 			$(".bonus").removeClass("bonusRight");
+			$(".bonus").fadeIn(100);
 			
 		}
 	});
