@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Calligraffitti);
 html, body {
   margin: 0;
   min-height: 100vh;
@@ -32,16 +33,18 @@ html{
   overflow: hidden;
 }
 
-h1 {
+.intro h1 {
   font-size: 40px;
   vertical-align: middle;
   margin: auto;
   position: relative;
   top: -113px;
+  font-family: 'Calligraffitti', cursive;
 }
-h2 {
+.intro h2 {
   font-size: 40px;
   margin: auto;
+  font-family: 'Calligraffitti', cursive;
 }
 .fadeEffectTitle {
   text-align: center;
@@ -77,10 +80,10 @@ h2 {
   text-align: center;
   margin: auto;
   position: relative;
-  top: -62px;
+  top: -40px;
   left: -70px;
   width: 500px;
-  height: 65px;
+  height: 70px;
   background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 26%, rgba(255, 255, 255, 1) 31%, rgba(255, 255, 255, 1) 42%);
   /*border: 2px solid black;*/
   transition: 1.5s left ease-in;
@@ -108,7 +111,7 @@ input {
 	margin-bottom : 20px;
 	display:block;
 	line-height : 30px;
-	font-size : 20px; 
+	font-size : 20px;
 	padding : 10px;
 }
 
@@ -362,7 +365,7 @@ canvas {
 	 opacity:0;
 	   transition : 1s opacity ease-out;
 
-	
+
 }
 
 .cloudShow{
@@ -376,7 +379,7 @@ canvas {
 	background-repeat:no-repeat;
 	background-position:0%;
 	animation : 25s cloudFondMove01 linear infinite 8s;
-	
+
 }
 
 
@@ -392,7 +395,7 @@ canvas {
 	background-repeat:no-repeat;
 	background-position:0%;
 	animation : 20s cloudFondMove02 linear infinite 10s;
-	
+
 }
 
 @keyframes cloudFondMove02 {
@@ -407,7 +410,7 @@ canvas {
 	background-position:0%;
 	background-repeat:no-repeat;
 	animation : 23s cloudFondMove03 linear infinite 6s;
-	
+
 }
 
 @keyframes cloudFondMove03 {
@@ -420,13 +423,13 @@ canvas {
 	top : 50px;
 	right : 50px;
 	font-size : 30px;
-	opacity: 0; 
+	opacity: 0;
 	background-color : rgba(255,255,255,0.9);
 	border-radius : 10px;
 	width : 200px;
 	text-align : left;
-	
-	
+
+
 }
 
 .score .fa {
@@ -453,7 +456,7 @@ canvas {
 	background-repeat:no-repeat;
 	position:absolute;
 	top:-20%;
-	
+
 }
 
 .bonus{
@@ -490,7 +493,7 @@ canvas {
 	top : 110%;
 	transform : rotate(360deg);
 	transition : 4s top ease-in, 4s transform linear;
-	
+
 }
 
 .eagleRight{
@@ -533,7 +536,7 @@ canvas {
 	position:absolute;
 	bottom: 10%;
 	right: 15%;
-	
+
 }
 .hideFirstStrophe02{
   left:230px;
@@ -551,6 +554,22 @@ canvas {
 .showHaiku{
   top:100vh;
 }
+
+.scoreFinale {
+  position : absolute;
+  top: 10%;
+  left:50%;
+  width: 600px;
+  height: 600px;
+  margin-left: -300px;
+  z-index: 10000000000;
+  background-color: white;
+  border: 3px solid black;
+  border-radius:10%;
+
+}
+
+
 
 .hide{
   opacity:0;

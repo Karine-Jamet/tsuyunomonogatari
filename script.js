@@ -28,12 +28,15 @@ jQuery.fn.onPositionChanged = function (trigger, millis) {
 
 
 $(document).ready(function() {
-	
+
 	var idInter01 = 0;
 	var idInter02 = 0;
-	var score = 0; 
+	var score = 0;
 	var pseudo = "Anonyme";
 	var listScore = [];
+
+$("#impact").trigger('load');
+$("#bonus").trigger('load');
 
  $("input").fadeOut(0);
   $("h1").hide();
@@ -56,11 +59,11 @@ $(document).ready(function() {
 
 
   $('.start .fa').on("click", function(e) {
-	  
+
 	pseudo = $("input").val();
-	
+
 	console.log(pseudo);
-	
+
     $('.intro').addClass("hide");
     window.setTimeout(function(e) {
       $('.intro').hide();
@@ -101,103 +104,103 @@ $(document).ready(function() {
     window.setTimeout(function(e) {
       $('.grue5').addClass('grueDown');
       $('.score').addClass('scoreShow ');
-	  
-	 
+
+
 	    idInter01 =  setInterval(function() {
-			
+
 			var pileFace = Math.floor(Math.random() * 2) + 1  ;
 			//console.log(pileFace);
 			if(pileFace > 1){
 				$(".eagle").addClass("eagleLeft");
 			}
 			else{
-				
+
 				$(".eagle").addClass("eagleRight");
 			}
-			
+
 		} ,random_interval());
 
-	    idInter02 =   setInterval(function() {
-			
+	    idInter02 =  setInterval(function() {
+
 			var pileFace = Math.floor(Math.random() * 2) + 1  ;
-			console.log(pileFace);
+			// console.log(pileFace);
 			if(pileFace > 1){
 				$(".bonus").addClass("bonusLeft");
 			}
 			else{
-				
+
 				$(".bonus").addClass("bonusRight");
 			}
-			
+
 		} ,random_interval());
 
-	
-	
+
+
 	$(".eagle").onPositionChanged(function(){
 		if($('.eagle').position().top > $(window).height()-142){
 			if($(".eagle").hasClass("eagleLeft") && $(".grue5").hasClass('directionLeft') ){
-				
+        $("#impact").trigger('play');
 				lostScore(score);
 				$(".grue5").fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
 			}else if($(".eagle").hasClass("eagleRight") && $(".grue5").hasClass('directionRight') ){
-				
+        $("#impact").trigger('play');
 				lostScore(score);
 				$(".grue5").fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
 			}
 			$(".eagle").removeClass("eagleLeft");
 			$(".eagle").removeClass("eagleRight");
-			
+
 		}
 	});
-	
-	
+
+
 		$(".bonus").onPositionChanged(function(){
 		if($('.bonus').position().top > $(window).height()-142){
 			if($(".bonus").hasClass("bonusLeft") && $(".grue5").hasClass('directionLeft') ){
-				
+        $("#bonus").trigger('play');
 				addScore(score);
-				$(".bonus").fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100);
+				$("#bonus").fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100);
 			}else if($(".bonus").hasClass("bonusRight") && $(".grue5").hasClass('directionRight') ){
-				
+        $("#bonus").trigger('play');
 				addScore(score);
 				$(".bonus").fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100);
 			}
 			$(".bonus").removeClass("bonusLeft");
 			$(".bonus").removeClass("bonusRight");
 			$(".bonus").fadeIn(100);
-			
+
 		}
 	});
-	
-	
+
+
 
     }, 8000);
-	
-	
+
+
 	window.setTimeout(function(e) {
-		
+
 		clearInterval(idInter01);
 		clearInterval(idInter02);
-		console.log("FIN");
-		
+
 		$(".grue5").addClass("grueUp");
 		$(".endGame").addClass("endGameShow");
 		$(".gameIni").fadeOut(1000);
 		$(".score").fadeOut(1000);
-		
-		var finale = {"pseudo" : pseudo, "score" : score }; 
-		
-	}, 28000);
-	
+
+		var finale = {"pseudo" : pseudo, "score" : score };
+
+	}, 48000);
+
 	window.setTimeout(function(e) {
 		$('.hideFirstStrophe02').addClass("showHaiku");
-	 }, 29000);
+    console.log("hello");
+  }, 50000);
 	 window.setTimeout(function(e) {
 		$('.hideSecondStrophe02').addClass("showHaiku");
-	 }, 30000);
+  }, 51000);
 	  window.setTimeout(function(e) {
 		$('.hideThirdStrophe02').addClass("showHaiku");
-	 }, 31000);
+  }, 52000);
 
 
 
@@ -205,7 +208,7 @@ $(document).ready(function() {
 
     var constraints = {
       video: true,
-      audio: true
+      audio: false
     };
 
     function successCallback(localMediaStream) {
@@ -256,14 +259,14 @@ $(document).ready(function() {
         }
       }
     });
-	
+
 		var random_interval = function(){
 			return Math.random()*8000+3000;
 		}
-	
 
 
-	
+
+
 	var addScore = function(oldScore){
 		score +=10;
 		$('#count')
@@ -274,9 +277,9 @@ $(document).ready(function() {
 			},
 			1000
 		);
-		
+
 	}
-	
+
 		var lostScore = function(oldScore){
 		score -=5;
 		$('#count')
@@ -287,12 +290,12 @@ $(document).ready(function() {
 			},
 			1000
 		);
-		
+
 	}
 
-	
-	
-	
-	
+
+
+
+
 
 });

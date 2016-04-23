@@ -4,11 +4,12 @@
 <head>
   <title>Tsuru no monogatari</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="style.css" />
-  
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script type="text/javascript" src="js/mocap_js-master/mocap.js"></script>
-    <script type="text/javascript" src="js/animateNumber/jquery.animateNumber.js"></script>
+  <script type="text/javascript" src="js/animateNumber/jquery.animateNumber.js"></script>
   <script src="script.js"></script>
 
 
@@ -17,7 +18,7 @@
 </head>
 
 <body>
-<video id="webcam" autoplay width="640" height="480"></video>
+  <video id="webcam" autoplay width="640" height="480"></video>
 
   <div class="kakemono">
     <div class="intro">
@@ -27,9 +28,9 @@
       <div class="fadeEffectTitleJapLeft"></div>
       <h1>Tsuru no monogatari</h1>
       <div class="start">
-		<input  name="pseudo" placeholder="Pseudonyme">
-		<i class="fa fa-play-circle"></i>
-	  </div>
+        <input name="pseudo" placeholder="Pseudonyme">
+        <i class="fa fa-play-circle"></i>
+      </div>
     </div>
     <div class="gameIni">
       <div class="haiku">
@@ -53,34 +54,44 @@
       <div class="cloudLeft"></div>
       <div class="cloudRight"></div>
       <div class=" cloudFond cloudFond01"></div>
-	  <div class="cloudFond cloudFond02"></div>
-		<div class="cloudFond cloudFond03"></div>
-		<div class="eagle"></div>
-		<i class="fa fa-star bonus" aria-hidden="true"></i>
-		
+      <div class="cloudFond cloudFond02"></div>
+      <div class="cloudFond cloudFond03"></div>
+      <div class="eagle"></div>
+      <i class="fa fa-star bonus" aria-hidden="true"></i>
+
     </div>
-	
-	<div class="endGame">
-		<div class="whiteStrophe hideFirstStrophe02"></div>
-        <p class="verticalTexte">Enfin<span>bb</span>arrivé<span>bb</span>au<span>bb</span>soleil</p>
-        <div class="whiteStrophe hideSecondStrophe02"></div>
-        <p class="verticalTexte">Pour<span>bb</span>encore<span>bb</span>danser<span>bb</span>avec<span>bb</span>toi<span>bb</span>ma<span>bb</span>bien<span>bb</span>aimée.</p>
-        <div class="whiteStrophe hideThirdStrophe02"></div>
-        <p class="verticalTexte">Claquement<span>bb</span>de<span>bb</span>becs.</p>
-        <div class="sceau"></div>
-		<div class="grueEnd"></div>
-			
-	</div>
+
+    <div class="endGame">
+      <div class="whiteStrophe hideFirstStrophe02"></div>
+      <p class="verticalTexte">Enfin<span>bb</span>arrivé<span>bb</span>au<span>bb</span>soleil</p>
+      <div class="whiteStrophe hideSecondStrophe02"></div>
+      <p class="verticalTexte">Pour<span>bb</span>encore<span>bb</span>danser<span>bb</span>avec<span>bb</span>toi</p>
+      <div class="whiteStrophe hideThirdStrophe02"></div>
+      <p class="verticalTexte">Claquement<span>bb</span>de<span>bb</span>becs.</p>
+      <div class="sceau"></div>
+      <div class="grueEnd"></div>
+
+    </div>
 
   </div>
-  <div class = "score">
-  <i class="fa fa-star" aria-hidden="true"></i>
-	<p id="count">0</p>
-</div>
-
-<audio controls autoplay>
-  <source src="sound/background_music2.mp3" type="audio/mpeg"> 
+  <div class="score">
+    <i class="fa fa-star" aria-hidden="true"></i>
+    <p id="count">0</p>
+  </div>
+  <!-- <div class="scoreFinale">
+  <h2>Score</h2>
+  <div class="list"></div>
+</div> -->
+  <audio controls autoplay>
+    <source src="sound/background_music2.mp3" type="audio/mpeg">
   </audio>
+  <audio id="impact">
+    <source src="sound/impact.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="bonus">
+    <source src="sound/bonus.mp3" type="audio/mpeg">
+  </audio>
+
 
 </body>
 
