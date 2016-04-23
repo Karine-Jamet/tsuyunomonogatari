@@ -485,7 +485,7 @@ canvas {
 }
 
 .bonusRight{
-	right : 30%;
+	right : 15%;
 	top : 110%;
 	transform : rotate(360deg);
 	transition : 4s top ease-in, 4s transform linear;

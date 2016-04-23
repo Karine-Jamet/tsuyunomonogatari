@@ -93,7 +93,68 @@ $(document).ready(function() {
       $('.score').addClass('scoreShow ');
 	  
 	 
+	    setInterval(function() {
+			
+			var pileFace = Math.floor(Math.random() * 2) + 1  ;
+			console.log(pileFace);
+			if(pileFace > 1){
+				$(".eagle").addClass("eagleLeft");
+			}
+			else{
+				
+				$(".eagle").addClass("eagleRight");
+			}
+			
+		} ,random_interval());
 
+	    setInterval(function() {
+			
+			var pileFace = Math.floor(Math.random() * 2) + 1  ;
+			console.log(pileFace);
+			if(pileFace > 1){
+				$(".bonus").addClass("bonusLeft");
+			}
+			else{
+				
+				$(".bonus").addClass("bonusRight");
+			}
+			
+		} ,random_interval());
+
+	
+	
+	$(".eagle").onPositionChanged(function(){
+		if($('.eagle').position().top > $(window).height()){
+			if($(".eagle").hasClass("eagleLeft") && $(".grue5").hasClass('directionLeft') ){
+				
+				lostScore(score);
+			}else if($(".eagle").hasClass("eagleRight") && $(".grue5").hasClass('directionRight') ){
+				
+				lostScore(score);
+			}
+			$(".eagle").removeClass("eagleLeft");
+			$(".eagle").removeClass("eagleRight");
+			
+		}
+	});
+	
+	
+		$(".bonus").onPositionChanged(function(){
+		if($('.bonus').position().top > $(window).height()){
+			if($(".bonus").hasClass("bonusLeft") && $(".grue5").hasClass('directionLeft') ){
+				
+				addScore(score);
+			}else if($(".bonus").hasClass("bonusRight") && $(".grue5").hasClass('directionRight') ){
+				
+				addScore(score);
+			}
+			$(".bonus").removeClass("bonusLeft");
+			$(".bonus").removeClass("bonusRight");
+			
+		}
+	});
+	
+	
 
     }, 8000);
 
@@ -160,66 +221,7 @@ $(document).ready(function() {
 			return Math.random()*8000+3000;
 		}
 	
-	    setInterval(function() {
-			
-			var pileFace = Math.floor(Math.random() * 2) + 1  ;
-			console.log(pileFace);
-			if(pileFace > 1){
-				$(".eagle").addClass("eagleLeft");
-			}
-			else{
-				
-				$(".eagle").addClass("eagleRight");
-			}
-			
-		} ,random_interval());
 
-	    setInterval(function() {
-			
-			var pileFace = Math.floor(Math.random() * 2) + 1  ;
-			console.log(pileFace);
-			if(pileFace > 1){
-				$(".bonus").addClass("bonusLeft");
-			}
-			else{
-				
-				$(".bonus").addClass("bonusRight");
-			}
-			
-		} ,random_interval());
-
-	
-	
-	$(".eagle").onPositionChanged(function(){
-		if($('.eagle').position().top > $(window).height()){
-			if($(".eagle").hasClass("eagleLeft") && $(".grue5").hasClass('directionLeft') ){
-				
-				lostScore(score);
-			}else if($(".eagle").hasClass("eagleRight") && $(".grue5").hasClass('directionRight') ){
-				
-				lostScore(score);
-			}
-			$(".eagle").removeClass("eagleLeft");
-			$(".eagle").removeClass("eagleRight");
-			
-		}
-	});
-	
-	
-		$(".bonus").onPositionChanged(function(){
-		if($('.bonus').position().top > $(window).height()){
-			if($(".bonus").hasClass("bonusLeft") && $(".grue5").hasClass('bonusLeft') ){
-				
-				addScore(score);
-			}else if($(".bonus").hasClass("bonusRight") && $(".grue5").hasClass('bonusRight') ){
-				
-				addScore(score);
-			}
-			$(".bonus").removeClass("bonusLeft");
-			$(".bonus").removeClass("bonusRight");
-			
-		}
-	});
 
 	
 	var addScore = function(oldScore){
