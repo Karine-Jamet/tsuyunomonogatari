@@ -96,7 +96,7 @@ $(document).ready(function() {
 	    setInterval(function() {
 			
 			var pileFace = Math.floor(Math.random() * 2) + 1  ;
-			console.log(pileFace);
+			//console.log(pileFace);
 			if(pileFace > 1){
 				$(".eagle").addClass("eagleLeft");
 			}
