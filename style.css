@@ -180,7 +180,7 @@ h2 {
   bottom: 40%;
   right: 20%;
   transition:2s opacity ease-out, 1s right ease-out;
-  z-index: 10000;
+  z-index: 100;
 
 }
 .grueShow{
@@ -447,6 +447,7 @@ canvas {
 	position:absolute;
 	top:-20%;
 	animation : 10s bonusColor linear infinite;
+	z-index:200;
 }
 
 @keyframes bonusColor {
