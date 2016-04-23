@@ -1,6 +1,35 @@
+jQuery.fn.onPositionChanged = function (trigger, millis) {
+    if (millis == null) millis = 100;
+    var o = $(this[0]); // our jquery object
+    if (o.length < 1) return o;
+
+    var lastPos = null;
+    var lastOff = null;
+    setInterval(function () {
+        if (o == null || o.length < 1) return o; // abort if element is non existend eny more
+        if (lastPos == null) lastPos = o.position();
+        if (lastOff == null) lastOff = o.offset();
+        var newPos = o.position();
+        var newOff = o.offset();
+        if (lastPos.top != newPos.top || lastPos.left != newPos.left) {
+            $(this).trigger('onPositionChanged', { lastPos: lastPos, newPos: newPos });
+            if (typeof (trigger) == "function") trigger(lastPos, newPos);
+            lastPos = o.position();
+        }
+        if (lastOff.top != newOff.top || lastOff.left != newOff.left) {
+            $(this).trigger('onOffsetChanged', { lastOff: lastOff, newOff: newOff});
+            if (typeof (trigger) == "function") trigger(lastOff, newOff);
+            lastOff= o.offset();
+        }
+    }, millis);
+
+    return o;
+};
+
+
 $(document).ready(function() {
 
-
+ var score = 0; 
 
   $("h1").hide();
   $(".fadeEffectTitleJapLeft").hide();
@@ -16,7 +45,7 @@ $(document).ready(function() {
 
   window.setTimeout(function(e) {
     $(".fadeEffectTitleJapLeft").addClass("fadeEffectTitleAction");
-    $(".fa").addClass("startShow");
+    $(".start .fa").addClass("startShow");
   }, 4800)
 
 
@@ -61,7 +90,9 @@ $(document).ready(function() {
 
     window.setTimeout(function(e) {
       $('.grue5').addClass('grueDown');
-      $('.water').addClass('waterMove ');
+      $('.score').addClass('scoreShow ');
+	  
+	 
 
 
     }, 8000);
@@ -124,7 +155,102 @@ $(document).ready(function() {
         }
       }
     });
+	
+		var random_interval = function(){
+			return Math.random()*8000+3000;
+		}
+	
+	    setInterval(function() {
+			
+			var pileFace = Math.floor(Math.random() * 2) + 1  ;
+			console.log(pileFace);
+			if(pileFace > 1){
+				$(".eagle").addClass("eagleLeft");
+			}
+			else{
+				
+				$(".eagle").addClass("eagleRight");
+			}
+			
+		} ,random_interval());
 
+	    setInterval(function() {
+			
+			var pileFace = Math.floor(Math.random() * 2) + 1  ;
+			console.log(pileFace);
+			if(pileFace > 1){
+				$(".bonus").addClass("bonusLeft");
+			}
+			else{
+				
+				$(".bonus").addClass("bonusRight");
+			}
+			
+		} ,random_interval());
 
+	
+	
+	$(".eagle").onPositionChanged(function(){
+		if($('.eagle').position().top > $(window).height()){
+			if($(".eagle").hasClass("eagleLeft") && $(".grue5").hasClass('directionLeft') ){
+				
+				lostScore(score);
+			}else if($(".eagle").hasClass("eagleRight") && $(".grue5").hasClass('directionRight') ){
+				
+				lostScore(score);
+			}
+			$(".eagle").removeClass("eagleLeft");
+			$(".eagle").removeClass("eagleRight");
+			
+		}
+	});
+	
+	
+		$(".bonus").onPositionChanged(function(){
+		if($('.bonus').position().top > $(window).height()){
+			if($(".bonus").hasClass("bonusLeft") && $(".grue5").hasClass('bonusLeft') ){
+				
+				addScore(score);
+			}else if($(".bonus").hasClass("bonusRight") && $(".grue5").hasClass('bonusRight') ){
+				
+				addScore(score);
+			}
+			$(".bonus").removeClass("bonusLeft");
+			$(".bonus").removeClass("bonusRight");
+			
+		}
+	});
+
+	
+	var addScore = function(oldScore){
+		score +=10;
+		$('#count')
+		.prop('number', oldScore)
+		.animateNumber(
+			{
+			number: oldScore+10
+			},
+			1000
+		);
+		
+	}
+	
+		var lostScore = function(oldScore){
+		score -=5;
+		$('#count')
+		.prop('number', oldScore)
+		.animateNumber(
+			{
+			number: oldScore-5
+			},
+			1000
+		);
+		
+	}
+
+	
+	
+	
+	
 
 });
