@@ -31,9 +31,11 @@ $(document).ready(function() {
 	
 	var idInter01 = 0;
 	var idInter02 = 0;
+	var score = 0; 
+	var pseudo = "Anonyme";
+	var listScore = [];
 
- var score = 0; 
-
+ $("input").fadeOut(0);
   $("h1").hide();
   $(".fadeEffectTitleJapLeft").hide();
   //$(".gameIni").hide();
@@ -44,16 +46,21 @@ $(document).ready(function() {
   window.setTimeout(function(e) {
     $(".fadeEffectTitleJapLeft").show();
     $("h1").show();
-  }, 4500);
+  }, 4400);
 
   window.setTimeout(function(e) {
     $(".fadeEffectTitleJapLeft").addClass("fadeEffectTitleAction");
     $(".start .fa").addClass("startShow");
-  }, 4800)
+	$("input").fadeIn(2000);
+  }, 4700)
 
 
-  $('.start').on("click", function(e) {
-    //  $(".gameIni").show();
+  $('.start .fa').on("click", function(e) {
+	  
+	pseudo = $("input").val();
+	
+	console.log(pseudo);
+	
     $('.intro').addClass("hide");
     window.setTimeout(function(e) {
       $('.intro').hide();
@@ -177,6 +184,8 @@ $(document).ready(function() {
 		$(".endGame").addClass("endGameShow");
 		$(".gameIni").fadeOut(1000);
 		$(".score").fadeOut(1000);
+		
+		var finale = {"pseudo" : pseudo, "score" : score }; 
 		
 	}, 28000);
 	
