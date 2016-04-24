@@ -199,6 +199,11 @@ h2 {
   transition: 3s right ease-out, 2s opacity ease-out, 3s bottom ease-in, 3s width ease-in, 3s height ease-in;
 }
 
+.grueUp{
+	bottom: 110vh;
+	transition : 2s bottom ease-out;
+}
+
 .directionLeft{
   right: 50vw;
   transition: 0.5s right ease-in;
@@ -448,6 +453,7 @@ canvas {
 	top:-20%;
 	animation : 10s bonusColor linear infinite;
 	z-index:200;
+	transition: 1s opacity ease;
 }
 
 @keyframes bonusColor {
@@ -492,7 +498,52 @@ canvas {
 	transition : 4s top ease-in, 4s transform linear;
 }
 
+
+.endGame {
+	opacity:0;
+	background-color : white;
+  top: 0;
+  left:10vw;
+  width: 80vw;
+  z-index: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.endGameShow {
+	opacity:1;
+	transition:1s opacity ease-in 1s;
+}
+
+.grueEnd{
+	background-image:url("images/grueEnd.png");
+	background-repeat:no-repeat;
+	background-size : contain;
+	width:40%;
+	height:60%;
+	position:absolute;
+	bottom: 10%;
+	right: 15%;
+	
+}
+.hideFirstStrophe02{
+  left:230px;
+}
+
+.hideSecondStrophe02{
+  left:318px;
+}
+
+.hideThirdStrophe02{
+  left:440px;
+  width: 100px;
+}
+
+.showHaiku{
+  top:100vh;
+}
+
 .hide{
   opacity:0;
-  transition : 1s opacity ease-out;
+  transition : 1s opacity ease-out ;
 }

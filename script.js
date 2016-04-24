@@ -28,6 +28,9 @@ jQuery.fn.onPositionChanged = function (trigger, millis) {
 
 
 $(document).ready(function() {
+	
+	var idInter01 = 0;
+	var idInter02 = 0;
 
  var score = 0; 
 
@@ -93,7 +96,7 @@ $(document).ready(function() {
       $('.score').addClass('scoreShow ');
 	  
 	 
-	    setInterval(function() {
+	    idInter01 =  setInterval(function() {
 			
 			var pileFace = Math.floor(Math.random() * 2) + 1  ;
 			//console.log(pileFace);
@@ -107,7 +110,7 @@ $(document).ready(function() {
 			
 		} ,random_interval());
 
-	    setInterval(function() {
+	    idInter02 =   setInterval(function() {
 			
 			var pileFace = Math.floor(Math.random() * 2) + 1  ;
 			console.log(pileFace);
@@ -162,7 +165,30 @@ $(document).ready(function() {
 	
 
     }, 8000);
-
+	
+	
+	window.setTimeout(function(e) {
+		
+		clearInterval(idInter01);
+		clearInterval(idInter02);
+		console.log("FIN");
+		
+		$(".grue5").addClass("grueUp");
+		$(".endGame").addClass("endGameShow");
+		$(".gameIni").fadeOut(1000);
+		$(".score").fadeOut(1000);
+		
+	}, 28000);
+	
+	window.setTimeout(function(e) {
+		$('.hideFirstStrophe02').addClass("showHaiku");
+	 }, 29000);
+	 window.setTimeout(function(e) {
+		$('.hideSecondStrophe02').addClass("showHaiku");
+	 }, 30000);
+	  window.setTimeout(function(e) {
+		$('.hideThirdStrophe02').addClass("showHaiku");
+	 }, 31000);
 
 
 
