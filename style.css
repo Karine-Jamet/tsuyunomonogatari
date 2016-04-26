@@ -5,14 +5,13 @@ html, body {
   text-align: center;
   overflow: hidden;
 }
-html{
+html {
   background-color: #def;
   background-image: radial-gradient(closest-side, transparent 98%, rgba(0, 0, 0, .2) 99%), radial-gradient(closest-side, transparent 98%, rgba(0, 0, 0, .2) 99%);
   background-size: 80px 80px;
   background-position: 0 0, 40px 40px;
 }
-
-.kakemono{
+.kakemono {
   height: 100vh;
   overflow: hidden;
   width: 80vw;
@@ -21,18 +20,17 @@ html{
   background-color: white;
   box-shadow: 1px 2px 10px 10px rgba(0, 0, 0, 0.4);
 }
-.intro{
-  opacity:1;
+.intro {
+  opacity: 1;
   background-color: white;
   height: 100vh;
   z-index: 100;
   width: 80vw;
   position: absolute;
-  top:0;
+  top: 0;
   left: 10vw;
   overflow: hidden;
 }
-
 .intro h1 {
   font-size: 40px;
   vertical-align: middle;
@@ -96,150 +94,132 @@ html{
   font-size: 70px;
   opacity: 0;
 }
-
- .start .startShow {
+.start .startShow {
   opacity: 1;
   transition: 1.5s opacity 1s;
 }
 .startShow:hover {
   cursor: pointer;
 }
-
 input {
-	text-align:center;
-	margin: auto;
-	margin-bottom : 20px;
-	display:block;
-	line-height : 30px;
-	font-size : 20px;
-	padding : 10px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 20px;
+  display: block;
+  line-height: 30px;
+  font-size: 20px;
+  padding: 10px;
 }
-
-
 
 /*------------ Game Ini ------------------*/
 
-.gameIni{
+.gameIni {
   position: absolute;
   top: 0;
-  left:10vw;
+  left: 10vw;
   width: 80vw;
   z-index: 0;
   height: 100vh;
   overflow: hidden;
 }
-
-.grue1{
+.grue1 {
   background-image: url("images/grue01.png");
   width: 30vw;
   height: 35vw;
   background-repeat: no-repeat;
   background-size: cover;
-  position:absolute;
+  position: absolute;
   bottom: 10px;
   right: 140px;
-  transition:2s opacity ease-out;
+  transition: 2s opacity ease-out;
   z-index: 1000;
-
 }
-
-.grue2{
+.grue2 {
   opacity: 0;
   background-image: url("images/grue02.png");
   width: 30vw;
   height: 35vw;
   background-repeat: no-repeat;
   background-size: cover;
-  position:absolute;
+  position: absolute;
   bottom: 10px;
   right: 140px;
-  transition:2s opacity ease-out;
+  transition: 2s opacity ease-out;
 }
-.grue3{
+.grue3 {
   opacity: 0;
   background-image: url("images/grue03.png");
   width: 54vw;
   height: 35vw;
   background-repeat: no-repeat;
   background-size: cover;
-  position:absolute;
+  position: absolute;
   bottom: 25px;
   right: 30px;
-  transition:2s opacity ease-out;
+  transition: 2s opacity ease-out;
 }
-.grue4{
+.grue4 {
   opacity: 0;
   background-image: url("images/grue04.png");
   width: 31vw;
   height: 35vw;
   background-repeat: no-repeat;
   background-size: cover;
-  position:absolute;
+  position: absolute;
   bottom: 30%;
   right: 15%;
-  transition:2s opacity ease-out;
+  transition: 2s opacity ease-out;
 }
-
-.grue5{
+.grue5 {
   opacity: 0;
   background-image: url("images/grue05.png");
   width: 500px;
   height: 350px;
   background-repeat: no-repeat;
   background-size: cover;
-  position:absolute;
+  position: absolute;
   /*background-color: pink;*/
   bottom: 40%;
   right: 20%;
-  transition:2s opacity ease-out, 1s right ease-out;
+  transition: 2s opacity ease-out, 1s right ease-out;
   z-index: 100;
-
 }
-.grueShow{
+.grueShow {
   opacity: 1;
 }
-
-.grueHide{
+.grueHide {
   opacity: 0;
 }
-
-.grueDown{
+.grueDown {
   bottom: 20px;
   width: 200px;
   height: 142px;
   right: 40%;
   transition: 3s right ease-out, 2s opacity ease-out, 3s bottom ease-in, 3s width ease-in, 3s height ease-in;
 }
-
-.grueUp{
-	bottom: 110vh;
-	transition : 2s bottom ease-out;
+.grueUp {
+  bottom: 110vh;
+  transition: 2s bottom ease-out;
 }
-
-.directionLeft{
+.directionLeft {
   right: 50vw;
   transition: 0.5s right ease-in;
 }
-
-.directionRight{
+.directionRight {
   right: 10vw;
   transition: 0.5s right ease-in;
-
 }
-
-.verticalTexte{
-  width:1px;
+.verticalTexte {
+  width: 1px;
   word-wrap: break-word;
   font-family: monospace;
   float: left;
   margin: 50px;
 }
-
 span {
-  color:white;
+  color: white;
 }
-
-.sceau{
+.sceau {
   width: 50px;
   height: 50px;
   background-image: url('images/sceaux.png');
@@ -249,49 +229,41 @@ span {
   margin-top: 325px;
   margin-left: -40px;
 }
-
 .whiteStrophe {
   width: 50px;
   height: 100vw;
   background-color: white;
-  position:absolute;
-  top:-50px;
+  position: absolute;
+  top: -50px;
   background: linear-gradient( rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 6%, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 1) 26%);
   /*border: 2px solid black;*/
   transition: 1.5s top ease-in;
 }
-
-.hideFirstStrophe{
-  left:30px;
+.hideFirstStrophe {
+  left: 30px;
 }
-
-.hideSecondStrophe{
-  left:118px;
+.hideSecondStrophe {
+  left: 118px;
 }
-
-.hideThirdStrophe{
-  left:250px;
+.hideThirdStrophe {
+  left: 250px;
   width: 100px;
 }
-
-.showHaiku{
-  top:100vh;
+.showHaiku {
+  top: 100vh;
 }
-
 video {
   position: absolute;
-  bottom:0;
-  right:0px;
+  bottom: 0;
+  right: 0px;
   height: 100px;
   width: auto;
+  transform: scale(-1, 1);
 }
-
 canvas {
-  display:none;
+  display: none;
 }
-
-
-.water{
+.water {
   background-image: url("images/seigaiha.png");
   background-position: left bottom;
   background-repeat: repeat;
@@ -304,281 +276,277 @@ canvas {
   transition: 1s opacity ease-in;
   animation: waterMove 2s linear infinite;
 }
-
-.waterShow{
+.waterShow {
   opacity: 1;
 }
-
 @keyframes waterMove {
-    from { background-position: left 0px; }
-    to { background-position: left 62px; }
+  from {
+    background-position: left 0px;
+  }
+  to {
+    background-position: left 62px;
+  }
 }
-
-
-.cloudLeft{
-  opacity:0;
+.cloudLeft {
+  opacity: 0;
   background-image: url("images/nuage.png");
   height: 100%;
   background-repeat: repeat-y;
   width: 200px;
   position: absolute;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   transform: scale(-1);
-  animation : 1s cloudMoveL linear infinite;
-
+  animation: 1s cloudMoveL linear infinite;
 }
-
-
-
-.cloudRight{
-  opacity:0;
+.cloudRight {
+  opacity: 0;
   background-image: url("images/nuage.png");
   height: 100%;
   background-position: left bottom;
   background-repeat: repeat-y;
   width: 200px;
   position: absolute;
-  top:0;
-  right:0;
- animation : 1s cloudMoveR linear infinite;
-  transition : 1s opacity ease-out;
-
-
+  top: 0;
+  right: 0;
+  animation: 1s cloudMoveR linear infinite;
+  transition: 1s opacity ease-out;
 }
-
 @keyframes cloudMoveR {
-    from { background-position: left 0px; }
-    to { background-position: left 300px; }
+  from {
+    background-position: left 0px;
+  }
+  to {
+    background-position: left 300px;
+  }
 }
-
 @keyframes cloudMoveL {
-    from { background-position: left 300px; }
-    to { background-position: left 0px; }
+  from {
+    background-position: left 300px;
+  }
+  to {
+    background-position: left 0px;
+  }
 }
-
-
 .cloudFond {
-	width : 200px;
-	height: 150%;
-	position: absolute;
-	 opacity:0;
-	   transition : 1s opacity ease-out;
-
-
+  width: 200px;
+  height: 150%;
+  position: absolute;
+  opacity: 0;
+  transition: 1s opacity ease-out;
 }
-
-.cloudShow{
+.cloudShow {
   opacity: 1;
 }
-
-.cloudFond01{
-	top:-50%;
-	left:10%;
-	background-image : url("images/nuageFond01.png");
-	background-repeat:no-repeat;
-	background-position:0%;
-	animation : 25s cloudFondMove01 linear infinite 8s;
-
+.cloudFond01 {
+  top: -50%;
+  left: 10%;
+  background-image: url("images/nuageFond01.png");
+  background-repeat: no-repeat;
+  background-position: 0%;
+  animation: 25s cloudFondMove01 linear infinite 8s;
 }
-
-
 @keyframes cloudFondMove01 {
-    from { background-position: left 0%; }
-    to { background-position: left 150%; }
+  from {
+    background-position: left 0%;
+  }
+  to {
+    background-position: left 150%;
+  }
 }
-
-.cloudFond02{
-	top:-50%;
-	left:40%;
-	background-image : url("images/nuageFond02.png");
-	background-repeat:no-repeat;
-	background-position:0%;
-	animation : 20s cloudFondMove02 linear infinite 10s;
-
+.cloudFond02 {
+  top: -50%;
+  left: 40%;
+  background-image: url("images/nuageFond02.png");
+  background-repeat: no-repeat;
+  background-position: 0%;
+  animation: 20s cloudFondMove02 linear infinite 10s;
 }
-
 @keyframes cloudFondMove02 {
-    from { background-position: left 0%; }
-    to { background-position: left 150%; }
+  from {
+    background-position: left 0%;
+  }
+  to {
+    background-position: left 150%;
+  }
 }
-
-.cloudFond03{
-	top:-50%;
-	left:70%;
-	background-image : url("images/nuageFond03.png");
-	background-position:0%;
-	background-repeat:no-repeat;
-	animation : 23s cloudFondMove03 linear infinite 6s;
-
+.cloudFond03 {
+  top: -50%;
+  left: 70%;
+  background-image: url("images/nuageFond03.png");
+  background-position: 0%;
+  background-repeat: no-repeat;
+  animation: 23s cloudFondMove03 linear infinite 6s;
 }
-
 @keyframes cloudFondMove03 {
-    from { background-position: left 0%; }
-    to { background-position: left 150%; }
+  from {
+    background-position: left 0%;
+  }
+  to {
+    background-position: left 150%;
+  }
 }
-
 .score {
-	position: absolute;
-	top : 50px;
-	right : 50px;
-	font-size : 30px;
-	opacity: 0;
-	background-color : rgba(255,255,255,0.9);
-	border-radius : 10px;
-	width : 200px;
-	text-align : left;
-
-
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  font-size: 30px;
+  opacity: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  width: 200px;
+  text-align: left;
 }
-
 .score .fa {
-	font-size : 20px;
-	display : inline-block;
-	margin-right : 20px ;
-	margin-left : 20px;
+  font-size: 20px;
+  display: inline-block;
+  margin-right: 20px;
+  margin-left: 20px;
 }
-
 .score p {
-	display : inline-block;
+  display: inline-block;
 }
-
-.eagle{
-	background-image : url("images/eagle.png");
-	background-size:cover;
-	width:260px;
-	height:140px;
-	background-repeat:no-repeat;
-	position:absolute;
-	top:-20%;
-
+.eagle {
+  background-image: url("images/eagle.png");
+  background-size: cover;
+  width: 260px;
+  height: 140px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -20%;
 }
-
-.bonus{
-	font-size:50px;
-	position:absolute;
-	top:-20%;
-	animation : 10s bonusColor linear infinite;
-	z-index:200;
-	transition: 1s opacity ease;
+.bonus {
+  font-size: 50px;
+  position: absolute;
+  top: -20%;
+  animation: 10s bonusColor linear infinite;
+  z-index: 200;
+  transition: 1s opacity ease;
 }
-
 @keyframes bonusColor {
-    0% { color: red; }
-	10%{ color : orange;}
-	20%{ color : yellow;}
-	30%{ color : white;}
-	40%{ color : green;}
-	50%{ color : turquoise;}
-	60%{ color : blue;}
-	70%{ color : purple;}
-	85%{ color : pink;}
-    100% {  color : red; }
+  0% {
+    color: red;
+  }
+  10% {
+    color: orange;
+  }
+  20% {
+    color: yellow;
+  }
+  30% {
+    color: white;
+  }
+  40% {
+    color: green;
+  }
+  50% {
+    color: turquoise;
+  }
+  60% {
+    color: blue;
+  }
+  70% {
+    color: purple;
+  }
+  85% {
+    color: pink;
+  }
+  100% {
+    color: red;
+  }
 }
-
-
-.eagleLeft{
-	left : 20%;
-	top : 110%;
-	transition : 2.5s top ease-in;
+.eagleLeft {
+  left: 20%;
+  top: 110%;
+  transition: 2.5s top ease-in;
 }
-
-.bonusLeft{
-	left : 30%;
-	top : 110%;
-	transform : rotate(360deg);
-	transition : 4s top ease-in, 4s transform linear;
-
+.bonusLeft {
+  left: 30%;
+  top: 110%;
+  transform: rotate(360deg);
+  transition: 4s top ease-in, 4s transform linear;
 }
-
-.eagleRight{
-	right : 15%;
-	top : 110%;
-	transition : 2s top ease-in;
-
+.eagleRight {
+  right: 15%;
+  top: 110%;
+  transition: 2s top ease-in;
 }
-
-.bonusRight{
-	right : 15%;
-	top : 110%;
-	transform : rotate(360deg);
-	transition : 4s top ease-in, 4s transform linear;
+.bonusRight {
+  right: 15%;
+  top: 110%;
+  transform: rotate(360deg);
+  transition: 4s top ease-in, 4s transform linear;
 }
-
-
 .endGame {
-	opacity:0;
-	background-color : white;
+  opacity: 0;
+  background-color: white;
   top: 0;
-  left:10vw;
+  left: 10vw;
   width: 80vw;
   z-index: 0;
   height: 100vh;
   overflow: hidden;
 }
-
 .endGameShow {
-	opacity:1;
-	transition:1s opacity ease-in 1s;
+  opacity: 1;
+  transition: 1s opacity ease-in 1s;
 }
-
-.grueEnd{
-	background-image:url("images/grueEnd.png");
-	background-repeat:no-repeat;
-	background-size : contain;
-	width:40%;
-	height:60%;
-	position:absolute;
-	bottom: 10%;
-	right: 15%;
-
+.grueEnd {
+  background-image: url("images/grueEnd.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 40%;
+  height: 60%;
+  position: absolute;
+  bottom: 10%;
+  right: 15%;
 }
-.hideFirstStrophe02{
-  left:230px;
+.hideFirstStrophe02 {
+  left: 230px;
 }
-
-.hideSecondStrophe02{
-  left:318px;
+.hideSecondStrophe02 {
+  left: 318px;
 }
-
-.hideThirdStrophe02{
-  left:440px;
+.hideThirdStrophe02 {
+  left: 440px;
   width: 100px;
 }
-
-.showHaiku{
-  top:100vh;
+.showHaiku {
+  top: 100vh;
 }
-
 .scoreFinale {
-  position : absolute;
-  /*opacity: 0;*/
+  position: absolute;
+  opacity: 0;
   top: 10%;
-  left:50%;
+  left: 50%;
   width: 600px;
   height: 600px;
   margin-left: -300px;
   z-index: 10000000000;
   background-color: white;
   border: 3px solid black;
-  border-radius:10%;
-	transition: 1s opacity ease-in;
-
+  border-radius: 10%;
+  transition: 1s opacity ease-in;
 }
-.scoreShow{
-	opacity:1;
-	transition: 1s opacity ease-in;
+.scoreShow {
+  opacity: 1;
+  transition: 1s opacity ease-in;
 }
-
 .list p {
-  width:50%;
+  width: 50%;
   text-align: left;
   margin: auto;
   font-size: 18px;
   line-height: 20px;
 }
-
-.hide{
-  opacity:0;
-  transition : 1s opacity ease-out ;
+button {
+  border: none;
+  background-color: transparent;
+}
+button:focus {
+  outline:none;
+}
+.hide {
+  opacity: 0;
+  transition: 1s opacity ease-out;
 }

@@ -198,7 +198,7 @@ $(document).ready(function() {
       $(".endGame").addClass("endGameShow");
       $(".gameIni").fadeOut(1000);
       $(".score").fadeOut(1000);
-      $(".scoreFinale").delay(5000).show(0).fadeOut(0);
+      $(".scoreFinale").delay(5000).show(0);
 
       var finale = {
         "pseudo": pseudo,
@@ -237,8 +237,8 @@ $(document).ready(function() {
     }, 70000);
     window.setTimeout(function(e) {
       $('.hideThirdStrophe02').addClass("showHaiku");
-      // $('.scoreFinale').addClass("scoreShow");
-      $('.scoreFinale').fadeIn(2000);
+      $('.scoreFinale').addClass("scoreShow");
+      // $('.scoreFinale').fadeIn(2000);
     }, 71000);
 
 
