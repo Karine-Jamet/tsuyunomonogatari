@@ -501,7 +501,6 @@ canvas {
   bottom: 10%;
   right: 15%;
 }
-<<<<<<< HEAD
 .hideFirstStrophe02 {
   left: 230px;
 }
@@ -510,18 +509,6 @@ canvas {
 }
 .hideThirdStrophe02 {
   left: 440px;
-=======
-.hideFirstStrophe02{
-  left:154px;
-}
-
-.hideSecondStrophe02{
-  left:252px;
-}
-
-.hideThirdStrophe02{
-  left:363px;
->>>>>>> b6f3c23ac45213b1c3583ceadccfddd0556adb21
   width: 100px;
 }
 .showHaiku {

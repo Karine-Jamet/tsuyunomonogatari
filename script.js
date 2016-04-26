@@ -120,6 +120,7 @@ $(document).ready(function() {
       $('.score').addClass('scoreShow ');
       $(".bonus").unbind('mouseenter mouseleave');
 
+
       idInter01 = setInterval(function() {
 
         var pileFace = Math.floor(Math.random() * 2) + 1;
