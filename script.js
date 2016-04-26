@@ -118,7 +118,7 @@ $(document).ready(function() {
     window.setTimeout(function(e) {
       $('.grue5').addClass('grueDown');
       $('.score').addClass('scoreShow ');
-
+      $(".bonus").unbind('mouseenter mouseleave');
 
       idInter01 = setInterval(function() {
 
@@ -230,7 +230,7 @@ $(document).ready(function() {
 
     window.setTimeout(function(e) {
       $('.hideFirstStrophe02').addClass("showHaiku");
-      console.log("hello");
+      // console.log("hello");
     }, 69000);
     window.setTimeout(function(e) {
       $('.hideSecondStrophe02').addClass("showHaiku");
