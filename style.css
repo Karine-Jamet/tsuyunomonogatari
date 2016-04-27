@@ -570,12 +570,28 @@ canvas {
 	transition: 1s opacity ease-in;
 }
 
+.list {
+  height: 450px;
+}
+
 .list p {
   width:50%;
   text-align: left;
   margin: auto;
   font-size: 18px;
   line-height: 20px;
+}
+button {
+  border: none;
+  background-color: transparent;
+}
+button:focus{
+  outline: none;
+}
+
+.scoreFinale .fa {
+  font-size: 30px;
+  margin-top: 10px;
 }
 
 .hide{

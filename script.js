@@ -118,6 +118,7 @@ $(document).ready(function() {
     window.setTimeout(function(e) {
       $('.grue5').addClass('grueDown');
       $('.score').addClass('scoreShow ');
+      $(".bonus").unbind('mouseenter mouseleave');
 
 
       idInter01 = setInterval(function() {
