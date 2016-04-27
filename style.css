@@ -284,6 +284,7 @@ video {
   right:0px;
   height: 100px;
   width: auto;
+  transform: scale(-1 , 1);
 }
 
 canvas {
@@ -534,7 +535,7 @@ canvas {
 
 }
 .hideFirstStrophe02{
-  left:154px;
+  left:138px;
 }
 
 .hideSecondStrophe02{
@@ -592,6 +593,11 @@ button:focus{
 .scoreFinale .fa {
   font-size: 30px;
   margin-top: 10px;
+  color:black;
+}
+
+.scoreFinale a {
+  color:black;
 }
 
 .hide{

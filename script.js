@@ -194,13 +194,15 @@ $(document).ready(function() {
 
       clearInterval(idInter01);
       clearInterval(idInter02);
-      // $(".grue5")
+
+      $(".grue5").removeClass("directionLeft");
+      $(".grue5").removeClass("directionRight");
       $(".grue5").addClass("grueUp");
       $(".endGame").addClass("endGameShow");
       $(".gameIni").fadeOut(1000);
       $(".score").fadeOut(1000);
-      $(".scoreFinale").delay(5000).show();
-      $(".scoreFinale").delay(5000).fadeOut(0);
+
+    //  $(".scoreFinale").delay(5000).fadeOut(0);
 
       var finale = {
         "pseudo": pseudo,
@@ -240,8 +242,11 @@ $(document).ready(function() {
     window.setTimeout(function(e) {
       $('.hideThirdStrophe02').addClass("showHaiku");
       // $('.scoreFinale').addClass("scoreShow");
-      $('.scoreFinale').fadeIn(20000);
+      // $('.scoreFinale').fadeIn(20000);
     }, 71000);
+    window.setTimeout(function(e) {
+      $(".scoreFinale").show();
+    }, 73000);
 
 
 
@@ -273,6 +278,11 @@ $(document).ready(function() {
 
   });
 
+
+  $('.reload').on('click',function(e){
+    document.location.reload(true);
+
+  });
 
 
   var ms = new motionSensor();
