@@ -443,11 +443,6 @@ canvas {
 	display : inline-block;
 }
 
-.scoreShow{
-	opacity:1;
-	transition: 1s opacity ease-in;
-}
-
 .eagle{
 	background-image : url("images/eagle.png");
 	background-size:cover;
@@ -557,6 +552,7 @@ canvas {
 
 .scoreFinale {
   position : absolute;
+  /*opacity: 0;*/
   top: 10%;
   left:50%;
   width: 600px;
@@ -566,10 +562,21 @@ canvas {
   background-color: white;
   border: 3px solid black;
   border-radius:10%;
+	transition: 1s opacity ease-in;
 
 }
+.scoreShow{
+	opacity:1;
+	transition: 1s opacity ease-in;
+}
 
-
+.list p {
+  width:50%;
+  text-align: left;
+  margin: auto;
+  font-size: 18px;
+  line-height: 20px;
+}
 
 .hide{
   opacity:0;
