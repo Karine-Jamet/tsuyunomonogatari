@@ -201,8 +201,12 @@ $(document).ready(function() {
       $(".endGame").addClass("endGameShow");
       $(".gameIni").fadeOut(1000);
       $(".score").fadeOut(1000);
+<<<<<<< HEAD
 
     //  $(".scoreFinale").delay(5000).fadeOut(0);
+=======
+      $(".scoreFinale").delay(5000).show(0);
+>>>>>>> 6925f04c6660f977120f1e0b205f5bec27915acd
 
       var finale = {
         "pseudo": pseudo,
@@ -241,8 +245,13 @@ $(document).ready(function() {
     }, 70000);
     window.setTimeout(function(e) {
       $('.hideThirdStrophe02').addClass("showHaiku");
+<<<<<<< HEAD
       // $('.scoreFinale').addClass("scoreShow");
       // $('.scoreFinale').fadeIn(20000);
+=======
+      $('.scoreFinale').addClass("scoreShow");
+      // $('.scoreFinale').fadeIn(2000);
+>>>>>>> 6925f04c6660f977120f1e0b205f5bec27915acd
     }, 71000);
     window.setTimeout(function(e) {
       $(".scoreFinale").show();
