@@ -32,7 +32,7 @@ jQuery.fn.onPositionChanged = function(trigger, millis) {
   return o;
 };
 
-//localStorage.clear();
+// localStorage.clear();
 
 $(document).ready(function() {
 
@@ -231,24 +231,24 @@ $(document).ready(function() {
 
       localStorage.setItem("score", JSON.stringify(listScore));
 
-    }, 60000);
+    }, 68000);
 
     window.setTimeout(function(e) {
       $('.hideFirstStrophe02').addClass("showHaiku");
       // console.log("hello");
-    }, 61000);
+    }, 69000);
     window.setTimeout(function(e) {
       $('.hideSecondStrophe02').addClass("showHaiku");
-    }, 62000);
+    }, 70000);
     window.setTimeout(function(e) {
       $('.hideThirdStrophe02').addClass("showHaiku");
-      // $('.scoreFinale').addClass("scoreShow");
-      // $('.scoreFinale').fadeIn(20000);
 
-    }, 63000);
+    }, 71000);
     window.setTimeout(function(e) {
       $(".scoreFinale").show();
-    }, 64000);
+        $(".scoreFinale").addClass("scoreShow");
+      console.log("show");
+    }, 73000);
 
 
 

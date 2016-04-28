@@ -259,6 +259,7 @@ video {
   height: 100px;
   width: auto;
   transform: scale(-1 , 1);
+  z-index: 1000;
 
 }
 canvas {
