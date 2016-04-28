@@ -502,13 +502,9 @@ canvas {
   bottom: 10%;
   right: 15%;
 }
-<<<<<<< HEAD
 .hideFirstStrophe02{
   left:138px;
-=======
-.hideFirstStrophe02 {
-  left: 230px;
->>>>>>> 6925f04c6660f977120f1e0b205f5bec27915acd
+
 }
 .hideSecondStrophe02 {
   left: 318px;
@@ -549,7 +545,6 @@ button {
   border: none;
   background-color: transparent;
 }
-<<<<<<< HEAD
 button:focus{
   outline: none;
 }
@@ -562,10 +557,7 @@ button:focus{
 
 .scoreFinale a {
   color:black;
-=======
-button:focus {
-  outline:none;
->>>>>>> 6925f04c6660f977120f1e0b205f5bec27915acd
+
 }
 .hide {
   opacity: 0;

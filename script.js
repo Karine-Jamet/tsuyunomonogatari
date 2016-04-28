@@ -32,7 +32,7 @@ jQuery.fn.onPositionChanged = function(trigger, millis) {
   return o;
 };
 
-// localStorage.clear();
+//localStorage.clear();
 
 $(document).ready(function() {
 
@@ -201,19 +201,16 @@ $(document).ready(function() {
       $(".endGame").addClass("endGameShow");
       $(".gameIni").fadeOut(1000);
       $(".score").fadeOut(1000);
-<<<<<<< HEAD
 
     //  $(".scoreFinale").delay(5000).fadeOut(0);
-=======
-      $(".scoreFinale").delay(5000).show(0);
->>>>>>> 6925f04c6660f977120f1e0b205f5bec27915acd
+
 
       var finale = {
         "pseudo": pseudo,
         "score": score,
         "now": true
       };
-      console.log(finale);
+      // console.log(finale);
       listScore.push(finale);
 
       listScore.sort(function(a, b) {
@@ -234,28 +231,24 @@ $(document).ready(function() {
 
       localStorage.setItem("score", JSON.stringify(listScore));
 
-    }, 68000);
+    }, 60000);
 
     window.setTimeout(function(e) {
       $('.hideFirstStrophe02').addClass("showHaiku");
       // console.log("hello");
-    }, 69000);
+    }, 61000);
     window.setTimeout(function(e) {
       $('.hideSecondStrophe02').addClass("showHaiku");
-    }, 70000);
+    }, 62000);
     window.setTimeout(function(e) {
       $('.hideThirdStrophe02').addClass("showHaiku");
-<<<<<<< HEAD
       // $('.scoreFinale').addClass("scoreShow");
       // $('.scoreFinale').fadeIn(20000);
-=======
-      $('.scoreFinale').addClass("scoreShow");
-      // $('.scoreFinale').fadeIn(2000);
->>>>>>> 6925f04c6660f977120f1e0b205f5bec27915acd
-    }, 71000);
+
+    }, 63000);
     window.setTimeout(function(e) {
       $(".scoreFinale").show();
-    }, 73000);
+    }, 64000);
 
 
 
