@@ -542,6 +542,12 @@ canvas {
   font-size: 18px;
   line-height: 20px;
 }
+
+.list{
+  height:450px;
+  overflow:auto;
+}
+
 button {
   border: none;
   background-color: transparent;
